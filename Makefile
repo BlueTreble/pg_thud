@@ -25,7 +25,7 @@ sql/$(EXTENSION).sql: sql/tables.sql sql/footer.sql sql/functions/_tf.schema__ge
 
 
 DATA = $(wildcard sql/*--*.sql) sql/$(EXTENSION)--$(EXTVERSION).sql
-EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
+EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql sql/$(EXTENSION).sql
 endif
 
 PGXS := $(shell $(PG_CONFIG) --pgxs)

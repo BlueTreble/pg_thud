@@ -2,15 +2,15 @@
     "name": "pg_thud",
     "abstract": "Framework to extend and enhance pgtap for db unit tests",
     "description": "This adds features to pgtap such as scafolding / test data",
-    "version": "1.0.0",
-    "maintainer": "Blue Treble <info@bluetreble.com>",
+    "version": "0.1.0",
+    "maintainer": "Jim Nasby <Jim.Nasby@BlueTreble.com>",
     "license": "postgresql",
     "provides": {
         "pg_thud": {
             "abstract": "Framework to extend and enhance pgtap for db unit tests",
             "file": "sql/pg_thud.sql",
             "docfile": "doc/pg_thud.md",
-            "version": "1.0.0"
+            "version": "0.1.0"
         }
     },
     "release_status": "unstable",

@@ -1,0 +1,25 @@
+{
+    "name": "pg_thud",
+    "abstract": "Framework to extend and enhance pg_tap for db unit tests",
+    "description": "This adds features to pg_tap such as scafolding / test data",
+    "version": "1.0.0",
+    "maintainer": "info@bluetreble.com",
+    "license": "postgresql",
+    "provides": {
+        "pg_thud": {
+            "abstract": "Framework to extend and enhance pg_tap for db unit tests",
+            "file": "sql/pg_thud.sql",
+            "docfile": "doc/pg_thud.md",
+            "version": "1.0.0"
+        }
+    },
+    "release_status": "unstable",
+
+    "generated_by": "info@bluetreble.com",
+
+
+    "meta-spec": {
+        "version": "1.0.0",
+        "url": "http://pgxn.org/meta/spec.txt"
+    }
+}

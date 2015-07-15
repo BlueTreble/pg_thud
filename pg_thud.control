@@ -1,0 +1,4 @@
+# pg_thud extension
+comment = 'Framework to extend and enhance pg_tap for db unit tests'
+default_version = '1.0.0'
+relocatable = true

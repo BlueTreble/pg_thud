@@ -44,13 +44,22 @@ test: clean install installcheck
 results: test
 	rsync -rlpgovP results/ test/expected
 
+rmtag:
+	@test -z "$$(git branch --list $(EXTVERSION))" || git branch -d $(EXTVERSION)
+
 tag:
+	@test -z "$$(git status --porcelain)" || (echo 'Untracked changes!'; echo; git status; exit 1)
 	git branch $(EXTVERSION)
 	git push --set-upstream origin $(EXTVERSION)
 
-dist:
+.PHONY: forcetag
+forcetag: rmtag tag
+
+dist: tag
 	git archive --prefix=$(EXTENSION)-$(EXTVERSION)/ -o ../$(EXTENSION)-$(EXTVERSION).zip $(EXTVERSION)
-	
+
+.PHONY: forcedist
+forcedist: forcetag dist
 
 # To use this, do make print-VARIABLE_NAME
 print-%  : ; @echo $* = $($*)

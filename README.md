@@ -71,7 +71,7 @@ so:
 
 Dependencies
 ------------
-The `pg_thud` data type has no dependencies other than PostgreSQL.
+The `pg_thud` depends on pgtap and PostgreSQL.
 
 Copyright and License
 ---------------------

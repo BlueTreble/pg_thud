@@ -15,7 +15,7 @@ GRANT USAGE ON SCHEMA tap TO public;
 CREATE EXTENSION pgtap SCHEMA tap;
 SET search_path = "$user", public, tap;
 
-SELECT CREATE ROLE test_factory__owner;
+CREATE ROLE test_factory__owner;
 CREATE SCHEMA tf AUTHORIZATION test_factory__owner;
 COMMENT ON SCHEMA tf IS $$Test factory. Tools for maintaining test data.$$;
 GRANT USAGE ON SCHEMA tf TO public;

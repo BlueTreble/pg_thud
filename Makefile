@@ -20,6 +20,10 @@ all: sql/$(EXTENSION)--$(EXTVERSION).sql
 sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
 	cp $< $@
 
+sql/$(EXTENSION).sql: sql/tables.sql sql/footer.sql sql/functions/_tf.schema__getsert.sql sql/functions/_tf.test_factory__get.sql sql/functions/_tf.data_table_name.sql sql/functions/tf.register.sql sql/functions/tf.get.sql
+	cat sql/tables.sql sql/functions/_tf.schema__getsert.sql sql/functions/_tf.test_factory__get.sql sql/functions/_tf.data_table_name.sql sql/functions/tf.register.sql sql/functions/tf.get.sql sql/footer.sql > sql/$(EXTENSION).sql
+
+
 DATA = $(wildcard sql/*--*.sql) sql/$(EXTENSION)--$(EXTVERSION).sql
 EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
 endif
